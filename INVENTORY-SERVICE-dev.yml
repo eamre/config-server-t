@@ -2,17 +2,13 @@ spring:
   application:
     name: INVENTORY-SERVICE
   datasource:
-    username: postgres
-    url: jdbc:postgresql://localhost:5432/inventorydb-t2
-    password: sifre
+    username: root
+    password: '12345'
+    url: jdbc:mysql://localhost:3306/inventorydb-t2?createDatabaseIfNotExist=true
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-      javax:
-        persistence:
-          validation:
-            mode: none
+        dialect: org.hibernate.dialect.MySQL5Dialect
     hibernate:
       ddl-auto: update
   kafka:
