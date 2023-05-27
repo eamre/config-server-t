@@ -3,8 +3,8 @@ spring:
     name: INVENTORY-SERVICE
   datasource:
     username: postgres
+    password: 'sifre'
     url: jdbc:postgresql://localhost:5432/inventorydb-t2
-    password: sifre
   jpa:
     properties:
       hibernate:
