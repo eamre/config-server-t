@@ -1,6 +1,12 @@
 spring:
   application:
     name: RENTAL-SERVICE
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/realms/RentACarMicroservice/protocol/openid-connect/certs
+
   datasource:
     username: postgres
     password: 'sifre'
@@ -33,7 +39,22 @@ eureka:
 server:
   port: 0
 
-
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  tracing:
+    sampling:
+      probability: 1.0
+    zipkin:
+      tracing:
+        endpoint: http://192.168.1.9:9411/api/v2/spans
 resilience4j:
   retry:
     instances:
