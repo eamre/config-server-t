@@ -46,6 +46,6 @@ management:
       probability: 1.0
     zipkin:
       tracing:
-        endpoint: http://192.168.1.9:9411/api/v2/spans
+        endpoint: http://192.168.1.5:9411/api/v2/spans
 server:
   port: 0
